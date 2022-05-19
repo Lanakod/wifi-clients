@@ -1,25 +1,27 @@
-const {Router} = require('express'),
-    {Server} = require('socket.io'),
-    DataController = require('../controllers/data.controller')
-
+const { Router } = require("express"),
+  { Server } = require("socket.io"),
+  DataController = require("../controllers/data.controller"),
+  jsonInit = require("../utils/json-init.util");
 
 /**
  * @param {Server} io
  */
 const routerInit = (io) => {
-    const router = Router()
-    const dataController = new DataController(io)
+  const router = Router();
+  const dataController = new DataController(io);
 
-    router.get("/", (_, response) => {
-        response.render("index", {
-            data: require('../../data.json')
-        });
-    });
+  router.get("/", (_, response) => {
+    return response.render("index");
+  });
 
-    router.post('/', dataController.set)
+  router.get("/clear", async (req, res) => {
+    jsonInit();
+    return res.redirect("/");
+  });
 
+  router.post("/", dataController.set);
 
-    return router
-}
+  return router;
+};
 
-module.exports = routerInit
+module.exports = routerInit;

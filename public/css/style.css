@@ -7,8 +7,8 @@ h1 {
 
 body {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    margin: 20px 0 20px 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -32,9 +32,21 @@ tfoot {
 }
 
 .tables {
-    width: 50vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
-    gap: 2vw;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    gap: 20px
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    45% {
+        background-color: red;
+    }
+    55% {
+        background-color: red;
+    }
 }

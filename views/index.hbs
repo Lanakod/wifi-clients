@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="clients">
-    <h1>Клиенты</h1>
+    <h1>{{clientsCount data}}</h1>
     <div class="tables">
         {{parseData data}}
     </div>
@@ -27,6 +27,7 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/script.js"></script>
+<script src="js/newClient.js"></script>
 </body>
 </html>
 
