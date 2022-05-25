@@ -40,7 +40,7 @@ const redraw = (ssid, deviceName, add) => {
   data.forEach((v) => {
     if (v.innerText.includes(deviceName)) match = v;
   });
-  if (match) {
+  if (match && deviceName !== "") {
     match.classList.add(add ? "blink-green" : "blink-red");
     if (!add) {
       match.classList.remove("blink-green");
