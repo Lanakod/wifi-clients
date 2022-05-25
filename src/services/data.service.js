@@ -30,8 +30,8 @@ class DataService {
     });
     fs.writeFileSync(path.resolve("data.json"), JSON.stringify(data));
 
-    io.sockets.emit("DATA", data);
-    io.sockets.emit("NEW", deviceName);
+    // io.sockets.emit("DATA", data);
+    io.sockets.emit("NEW", deviceName, ssid);
 
     logger(
       `[${moment().format(
@@ -93,6 +93,15 @@ class DataService {
 
     return {
       message: `FETCHED`,
+    };
+  };
+
+  static getData = (io) => {
+    const data = JSON.parse(
+      fs.readFileSync(path.resolve("data.json"), "utf-8")
+    );
+    return {
+      data,
     };
   };
 }

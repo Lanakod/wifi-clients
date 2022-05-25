@@ -1,5 +1,4 @@
-const socket = io();
-socket.on("DATA", (data) => {
+const initTable = (data) => {
   let res = "";
   let count = 0;
   Object.keys(data).map((k) => {
@@ -41,4 +40,4 @@ socket.on("DATA", (data) => {
   });
   document.querySelector(".tables").innerHTML = res;
   document.querySelector("h1").innerHTML = `Клиенты - ${count}`;
-});
+};

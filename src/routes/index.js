@@ -10,9 +10,9 @@ const routerInit = (io) => {
   const router = Router();
   const dataController = new DataController(io);
 
-  router.get("/", (_, response) => {
-    return response.render("index");
-  });
+  // router.get("/", (_, response) => {
+  //   return response.render("index");
+  // });
 
   router.get("/clear", async (req, res) => {
     jsonInit();
@@ -22,6 +22,7 @@ const routerInit = (io) => {
   router.post("/", dataController.set);
   router.post("/del", dataController.del);
   router.get("/fetch", dataController.fetch);
+  router.get("/getData", dataController.getData);
 
   return router;
 };

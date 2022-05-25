@@ -54,6 +54,19 @@ class DataController {
       return res.status(500).json({ message: "Internal server error" });
     }
   };
+
+  /**
+   * @param {Request} req
+   * @param {Response} res
+   */
+  getData = async (req, res) => {
+    try {
+      return res.status(200).json(DataService.getData(this.io));
+    } catch (e) {
+      console.log(e);
+      return res.status(500).json({ message: "Internal server error" });
+    }
+  };
 }
 
 module.exports = DataController;
