@@ -5,7 +5,7 @@ socket.on("NEW", (deviceName) => {
     if (v.innerText === deviceName) match = v;
   });
   if (match) {
-    match.classList.add("blink");
-    setTimeout(() => match.classList.remove("blink"), 5000);
+    match.classList.add("blink-green");
+    setTimeout(() => match.classList.remove("blink-green"), 5000);
   }
 });

@@ -22,7 +22,7 @@ const bootstrap = (app) => {
       JsonInit();
     }
   }, 60 * 60 * 1000);
-  JsonInit();
+  // JsonInit();
 
   handlebars(app);
 

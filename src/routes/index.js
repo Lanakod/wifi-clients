@@ -20,6 +20,8 @@ const routerInit = (io) => {
   });
 
   router.post("/", dataController.set);
+  router.post("/del", dataController.del);
+  router.get("/fetch", dataController.fetch);
 
   return router;
 };

@@ -38,15 +38,28 @@ tfoot {
     gap: 20px
 }
 
-.blink {
-    animation: blinker 1s linear infinite;
+.blink-red {
+    animation: blinker-red 1s linear infinite;
 }
 
-@keyframes blinker {
+@keyframes blinker-red {
     45% {
         background-color: red;
     }
     55% {
         background-color: red;
+    }
+}
+
+.blink-green {
+    animation: blinker-green 1s linear infinite;
+}
+
+@keyframes blinker-green {
+    45% {
+        background-color: green;
+    }
+    55% {
+        background-color: green;
     }
 }
